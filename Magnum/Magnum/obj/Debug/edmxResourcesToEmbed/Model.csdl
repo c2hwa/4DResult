@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MagnumModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AccessID" Type="Int32" />
+    <Property Name="ContactNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="MagnumEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="draw_CustomerNumber" EntityType="MagnumModel.draw_CustomerNumber" />
+    <EntitySet Name="draw_Number" EntityType="MagnumModel.draw_Number" />
+    <EntitySet Name="draw_ResultUnpublish" EntityType="MagnumModel.draw_ResultUnpublish" />
+    <EntitySet Name="Orders" EntityType="MagnumModel.Order" />
+    <EntitySet Name="OrderItems" EntityType="MagnumModel.OrderItem" />
+    <EntitySet Name="OrderItemSplits" EntityType="MagnumModel.OrderItemSplit" />
+    <EntitySet Name="setting_CategoryRate" EntityType="MagnumModel.setting_CategoryRate" />
+  </EntityContainer>
+  <EntityType Name="draw_CustomerNumber">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DrawResultID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="draw_Number">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Selected" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="draw_ResultUnpublish">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Prize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CustName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Repeat" Type="Int32" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Round" Type="Int32" />
+    <Property Name="Year" Type="Int32" />
+  </EntityType>
+  <EntityType Name="OrderItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="Int32" />
+    <Property Name="Number" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Box" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IBox" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="BaoHead" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="BaoTail" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SuperA1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SuperA2" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SuperA3" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SuperA4" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SuperA5" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SuperA6" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="OrderItemSplit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="Int32" />
+    <Property Name="Number" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="setting_CategoryRate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Rate" Type="Double" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

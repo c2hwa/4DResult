@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MagnumModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="draw_CustomerNumber">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="varchar" MaxLength="4" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DrawResultID" Type="int" />
+  </EntityType>
+  <EntityType Name="draw_Number">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="varchar" MaxLength="4" />
+    <Property Name="Selected" Type="bit" />
+  </EntityType>
+  <EntityType Name="draw_ResultUnpublish">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="varchar" MaxLength="4" />
+    <Property Name="Prize" Type="varchar" MaxLength="50" />
+    <Property Name="Rate" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderNo" Type="varchar" MaxLength="10" />
+    <Property Name="Round" Type="int" />
+    <Property Name="Year" Type="int" />
+    <Property Name="CustName" Type="varchar" MaxLength="100" />
+    <Property Name="ContactNo" Type="varchar" MaxLength="20" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Repeat" Type="int" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="OrderItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="Number" Type="varchar" MaxLength="4" />
+    <Property Name="Box" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IBox" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="BaoHead" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="BaoTail" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SuperA1" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SuperA2" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SuperA3" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SuperA4" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SuperA5" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SuperA6" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="OrderItemSplit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="Number" Type="varchar" MaxLength="4" />
+    <Property Name="CategoryCode" Type="varchar" MaxLength="50" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="setting_CategoryRate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Rate" Type="float" />
+    <Property Name="Description" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="AccessID" Type="int" />
+    <Property Name="ContactNo" Type="varchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="MagnumModelStoreContainer">
+    <EntitySet Name="draw_CustomerNumber" EntityType="Self.draw_CustomerNumber" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="draw_Number" EntityType="Self.draw_Number" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="draw_ResultUnpublish" EntityType="Self.draw_ResultUnpublish" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderItem" EntityType="Self.OrderItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderItemSplit" EntityType="Self.OrderItemSplit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="setting_CategoryRate" EntityType="Self.setting_CategoryRate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

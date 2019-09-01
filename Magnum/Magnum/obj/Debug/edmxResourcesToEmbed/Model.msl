@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MagnumModelStoreContainer" CdmEntityContainer="MagnumEntities">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="MagnumModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="AccessID" ColumnName="AccessID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="draw_CustomerNumber">
+      <EntityTypeMapping TypeName="MagnumModel.draw_CustomerNumber">
+        <MappingFragment StoreEntitySet="draw_CustomerNumber">
+          <ScalarProperty Name="DrawResultID" ColumnName="DrawResultID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="draw_Number">
+      <EntityTypeMapping TypeName="MagnumModel.draw_Number">
+        <MappingFragment StoreEntitySet="draw_Number">
+          <ScalarProperty Name="Selected" ColumnName="Selected" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="draw_ResultUnpublish">
+      <EntityTypeMapping TypeName="MagnumModel.draw_ResultUnpublish">
+        <MappingFragment StoreEntitySet="draw_ResultUnpublish">
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Prize" ColumnName="Prize" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="MagnumModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Round" ColumnName="Round" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Repeat" ColumnName="Repeat" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="CustName" ColumnName="CustName" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderItems">
+      <EntityTypeMapping TypeName="MagnumModel.OrderItem">
+        <MappingFragment StoreEntitySet="OrderItem">
+          <ScalarProperty Name="SuperA6" ColumnName="SuperA6" />
+          <ScalarProperty Name="SuperA5" ColumnName="SuperA5" />
+          <ScalarProperty Name="SuperA4" ColumnName="SuperA4" />
+          <ScalarProperty Name="SuperA3" ColumnName="SuperA3" />
+          <ScalarProperty Name="SuperA2" ColumnName="SuperA2" />
+          <ScalarProperty Name="SuperA1" ColumnName="SuperA1" />
+          <ScalarProperty Name="BaoTail" ColumnName="BaoTail" />
+          <ScalarProperty Name="BaoHead" ColumnName="BaoHead" />
+          <ScalarProperty Name="IBox" ColumnName="IBox" />
+          <ScalarProperty Name="Box" ColumnName="Box" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderItemSplits">
+      <EntityTypeMapping TypeName="MagnumModel.OrderItemSplit">
+        <MappingFragment StoreEntitySet="OrderItemSplit">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CategoryCode" ColumnName="CategoryCode" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="setting_CategoryRate">
+      <EntityTypeMapping TypeName="MagnumModel.setting_CategoryRate">
+        <MappingFragment StoreEntitySet="setting_CategoryRate">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
